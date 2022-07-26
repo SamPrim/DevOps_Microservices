@@ -4,15 +4,18 @@
 
 # Step 1:
 # This is your Docker ID/path
-# dockerpath=<>
+dockerpath=primendo/api-flask
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-
+kubectl run api-flask --image=primendo/api-flask --port=80 app=api-flask
 
 # Step 3:
 # List kubernetes pods
+kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
+
+kubectl port-forward pod/api-flask --address 0.0.0.0 8000:80
 

@@ -5,11 +5,13 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath=primendo/api-flask
 
 # Step 2:  
 # Authenticate & tag
+docker login --username primendo
+docker tag api-flask primendo/api-flask
 echo "Docker ID and Image: $dockerpath"
 
 # Step 3:
-# Push image to a docker repository
+docker push $dockerpath
