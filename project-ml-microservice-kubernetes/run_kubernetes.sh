@@ -17,5 +17,5 @@ kubectl get pods
 # Step 4:
 # Forward the container port to a host
 
-# kubectl port-forward pod/api-flask --address 0.0.0.0 8000:80
+kubectl port-forward pod/api-flask --address 0.0.0.0 8080:80
 
