@@ -9,13 +9,12 @@ jobs:
         docker:
             # Use the same Docker base as the project
             - image: python:3.7.3-stretch
-        run: ls
-        run: pwd
         
-        working_directory: ~/project-ml-microservice-kubernetes
     
         steps:
             -   checkout
+            - run: ls
+            - run: pwd
     
             # Download and cache dependencies
             -   restore_cache:
