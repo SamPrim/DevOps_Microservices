@@ -10,10 +10,10 @@ jobs:
             # Use the same Docker base as the project
             - image: python:3.7.3-stretch
         
+        working_directory: ~/repo
+    
         steps:
             -   checkout
-            
-            - run: cd  project-ml-microservice-kubernetes
     
             # Download and cache dependencies
             -   restore_cache:
@@ -25,7 +25,6 @@ jobs:
             -   run:
                     name: install dependencies
                     command: |
-                        cd  project-ml-microservice-kubernetes
                         python3 -m venv venv
                         . venv/bin/activate
                         make install
@@ -41,6 +40,5 @@ jobs:
             -   run:
                     name: run lint
                     command: |
-                        cd project-ml-microservice-kubernetes
                         . venv/bin/activate
                         make lint
